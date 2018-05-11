@@ -4,7 +4,7 @@
 // file license.txt or http://www.opensource.org/licenses/mit-license.php.
 
 #ifndef __cplusplus
-# error This header can only be compiled as C++.
+#error This header can only be compiled as C++.
 #endif
 
 #ifndef __INCLUDED_PROTOCOL_H__
@@ -18,7 +18,7 @@
 extern bool fTestNet;
 static inline unsigned short GetDefaultPort(const bool testnet = fTestNet)
 {
-    return testnet ? 19335 : 9333;
+    return testnet ? 144664 : 44664;
 }
 
 //
