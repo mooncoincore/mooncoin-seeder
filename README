@@ -5,7 +5,7 @@ mooncoin-seeder is a crawler for the mooncoin network, which exposes a list
 of reliable nodes via a built-in DNS server.
 
 Features:
-* regularly revisits known nodes to check their availability
+* regularly revisits known nodes to check their availability  
 * bans nodes after enough failures, or bad behaviour
 * accepts nodes down to v0.5.0 to request new IP addresses from,
   but only reports good post-v0.6.9 nodes.
