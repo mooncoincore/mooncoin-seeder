@@ -401,12 +401,15 @@ extern "C" void* ThreadStats(void*) {
 }
 
 static const string mainnet_seeds[] = {"dnsseed01.moonypool.com", "dnsseed02.moonypool.com", "dnsseed03.moonypool.com",  ""};
-static const string testnet_seeds[] = {"testnet-seed01.moonypool.com", "testnet-seed02.moonypool.com", "testnet-seed03.moonypool.com",  ""};
+static const string testnet_seeds[] = {"testnet-seed01.moonypool.com",  ""};
 static const string *seeds = mainnet_seeds;
 
 extern "C" void* ThreadSeeder(void*) {
   if (!fTestNet){
     db.Add(CService("45.32.217.146.vultr.com", 44664), true);
+  }else{
+    db.Add(CService("45.32.90.235", 14664), true);
+    db.Add(CService("217.163.29.38", 14664), true);
   }
   do {
     for (int i=0; seeds[i] != ""; i++) {
@@ -458,12 +461,13 @@ int main(int argc, char **argv) {
   bool fDNS = true;
   if (opts.fUseTestNet) {
       printf("Using testnet.\n");
-      pchMessageStart[0] = 0xfa;
-      pchMessageStart[1] = 0xbf;
-      pchMessageStart[2] = 0xb5;
-      pchMessageStart[3] = 0xda;
+      pchMessageStart[0] = 0xf3;
+      pchMessageStart[1] = 0xd2;
+      pchMessageStart[2] = 0xc8;
+      pchMessageStart[3] = 0xf1;
       seeds = testnet_seeds;
       fTestNet = true;
+      
   }
   if (!opts.ns) {
     printf("No nameserver set. Not starting DNS server.\n");
